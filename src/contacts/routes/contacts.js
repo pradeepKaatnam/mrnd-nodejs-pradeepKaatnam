@@ -9,9 +9,9 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-	var msg=new Array();
-	contacts.message=msg;
-	console.log(contacts);
+	//var msg=new Array();
+	//contacts.message=msg;
+	//console.log(contacts);
 	contacts[num++]=req.body;
 	res.send(""+(num-1));
   //console.log(req.body);
@@ -28,12 +28,12 @@ router.put('/:id', function(req, res, next) {
 	contacts[+req.params.id]=original;
 	res.send(original);
   });
-router.post('/:id',function(req,res,next){
+/*router.post('/:id',function(req,res,next){
 	console.log(+req.params.id);
 	var original=contacts[+req.params.id];
 	console.log(original);
 	original.message.push(req.body);
 	contacts[+req.params.id]=original;
 	res.send(original);
-});
+}); */
 module.exports = router;
